@@ -1,4 +1,5 @@
 pipeline {
+  agent any
   environment {
         registry = "krishnaguy/nginx-test"
         registryCredential = 'dockerhub'
@@ -19,10 +20,12 @@ pipeline {
       }
     }
     stage('Image'){
-      agent none
-      script {
-                 docker.build registry + ":$BUILD_NUMBER"
-             }
+
+      steps {
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
+          }
+      }
 
     }
   }
