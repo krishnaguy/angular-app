@@ -12,6 +12,7 @@ pipeline {
       steps {
         sh 'ls -l'
         sh 'npm install'
+        sh 'ng build --prod'
       }
     }
   }
