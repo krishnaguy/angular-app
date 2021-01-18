@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-        imagename = "krishnaguy/hello"
+
         registry = "krishnaguy/nginx-test"
         registryCredential = 'dockerhub'
         dockerImage = ''
